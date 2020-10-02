@@ -4,8 +4,10 @@ function App() {
   return (
     <div className="App">
       <div className="container">
-        <h1 className="header">Header</h1>
-        <h1 className="subheader">Subheader</h1>
+        <div className="col-container">
+          <h1 className="header">Header</h1>
+          <h1 className="subheader">Subheader</h1>
+        </div>
       </div>
       <div className="row">
         <div className="six col">
@@ -28,22 +30,19 @@ function App() {
           </div>
         </div>
         <div className="six col">
-          <p className="paragraph">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum Lorem ipsum
-            dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-            incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-            veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-            ea commodo consequat. Duis aute irure dolor in reprehenderit in
-            voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-            officia deserunt mollit anim id est laborum
-          </p>
+          <form className="form">
+            <h1 className="subheader">Login</h1>
+            <input className="form" type="text" placeholder="Email"></input>
+            <input className="form" type="text" placeholder="Username"></input>
+            <input
+              className="form"
+              type="password"
+              placeholder="Password"
+            ></input>
+            <button className="form" type="submit">
+              Submit
+            </button>
+          </form>
         </div>
         <div className="four col">
           <p className="paragraph">

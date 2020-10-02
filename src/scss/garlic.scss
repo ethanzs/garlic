@@ -1,5 +1,5 @@
 /* Garlic CSS Framework
- * Version 1.1
+ * Version 1.2
  * Author: Ethan Z. Seligman
  *
 
@@ -16,7 +16,7 @@ $lightBg: #e3e3e3;
 $darkBlue: #111116;
 $lightBlue: #343746;
 $lightGray: #e3e3e3;
-$medGray: #a0a0a0;
+$medGray: #a7a7a7;
 $medBlue: #4a4e61;
 
 /* Formatting Variables */
@@ -42,6 +42,15 @@ body {
   background: $darkBg;
   padding-top: $padding / 2;
   box-sizing: border-box;
+}
+
+::-moz-selection {
+  background: #a4ffb6;
+  color: #fff;
+}
+::selection {
+  background: #a4ffb6;
+  color: #fff;
 }
 
 /* Containers */
@@ -263,6 +272,68 @@ div.col.twelve {
   div.col.twelve {
     width: 100%;
   }
+}
+
+/* Form */
+form.form {
+  width: 100%;
+  box-sizing: border-box;
+  padding: $padding;
+  background: $lightBlue;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+input[type="text"].form,
+input[type="email"].form,
+input[type="password"] {
+  border: none;
+  border-bottom: 2px solid $green;
+  background: none;
+  font-size: 1.2em;
+  width: 100%;
+  outline: none;
+  box-sizing: border-box;
+  color: #fff;
+  font-family: $fontsPara;
+  padding: 10px 10px;
+  font-weight: 200;
+  transition: background 0.15s ease, color 0.15s ease;
+  margin-bottom: 20px;
+  background: $lightBlue;
+}
+
+input[type="text"].form:focus,
+input[type="email"].form:focus,
+input[type="password"]:focus {
+  background: $medBlue;
+  color: $green;
+}
+
+button.form {
+  border: none;
+  font-family: $fontsPara;
+  padding: 10px 20px;
+  font-size: 1em;
+  background: $green;
+  color: $darkBlue;
+  font-weight: 500;
+  cursor: pointer;
+  outline: none;
+}
+
+button.form:hover {
+  background: #fff;
+}
+
+button.form:active {
+  background: $green;
+}
+
+::placeholder {
+  color: #71748a;
+  font-weight: 400;
 }
 
 /* Footer */
