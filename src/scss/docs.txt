@@ -1,0 +1,12 @@
+Garlic CSS Docs
+
+h1.header
+h1.subheader
+p.paragraph
+
+.container //padding
+.container-fluid //no padding
+
+div.row -> .one...twelve .col -> .col-container
+
+div.footer -> p.footer
