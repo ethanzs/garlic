@@ -1,5 +1,5 @@
 /* Garlic CSS Framework
- * Version 1.2
+ * Version 1.21
  * Author: Ethan Z. Seligman
  *
 
@@ -120,7 +120,7 @@ p.paragraph {
 div.row {
   display: flex;
   flex-flow: column wrap;
-  justify-content: left;
+  justify-content: center;
   flex-direction: row;
   flex: none;
   padding: 0 $padding/2;
