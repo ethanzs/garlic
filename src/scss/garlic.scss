@@ -10,7 +10,8 @@ $lg: 992px;
 $xl: 1200px;
 
 /* Color Variables */
-$green: #7ad68d;
+$color: #f58ed6; // Main color
+$lightColor: #ffbded;
 $darkBg: #22222c;
 $lightBg: #e3e3e3;
 $darkBlue: #111116;
@@ -20,10 +21,15 @@ $medGray: #a7a7a7;
 $medBlue: #4a4e61;
 
 /* Formatting Variables */
-$padding: 25px;
+//global padding
+$padding: 30px;
+//text
 $headerSize: 3.4em;
 $subheaderSize: 2.6em;
-$paragraphSize: 1em;
+$paragraphSize: 1.1em;
+//nav
+$navHeight: 80px;
+$navBg: $darkBlue;
 
 /* Fonts */
 $fontsHeader: "Teko", sans-serif;
@@ -40,16 +46,14 @@ $fontsPara: "Rubik", sans-serif;
 
 body {
   background: $darkBg;
-  padding-top: $padding / 2;
-  box-sizing: border-box;
 }
 
 ::-moz-selection {
-  background: #a4ffb6;
+  background: $lightColor;
   color: #fff;
 }
 ::selection {
-  background: #a4ffb6;
+  background: $lightColor;
   color: #fff;
 }
 
@@ -58,9 +62,11 @@ div.container {
   padding: $padding/2 $padding;
   box-sizing: border-box;
 }
+
 div.container-fluid {
   padding: 0;
 }
+
 @media only screen and (max-width: $md) {
   $padding: 20px;
   div.container {
@@ -84,16 +90,16 @@ div.container-fluid {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: $lightBlue;
+  background: #4a4e61;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: $green;
+  background: $color;
 }
 
 /* Text */
 h1.header {
-  color: $green;
+  color: $color;
   font-weight: 500;
   font-size: $headerSize;
   line-height: 50px;
@@ -112,6 +118,14 @@ p.paragraph {
   font-size: $paragraphSize;
   line-height: 23px;
   color: $medGray;
+  font-weight: 300;
+}
+
+p.paragraph.semibold {
+  font-weight: 400;
+}
+
+p.paragraph.bold {
   font-weight: 500;
 }
 
@@ -188,19 +202,19 @@ div.col.twelve {
     padding: $padding;
   }
   div.col.one {
-    width: calc(6 / 12 * 100%);
+    width: calc(12 / 12 * 100%);
   }
   div.col.two {
-    width: calc(6 / 12 * 100%);
+    width: calc(12 / 12 * 100%);
   }
   div.col.three {
-    width: calc(6 / 12 * 100%);
+    width: calc(12 / 12 * 100%);
   }
   div.col.four {
-    width: calc(6 / 12 * 100%);
+    width: calc(12 / 12 * 100%);
   }
   div.col.five {
-    width: calc(6 / 12 * 100%);
+    width: calc(12 / 12 * 100%);
   }
   div.col.six {
     width: calc(12 / 12 * 100%);
@@ -274,6 +288,46 @@ div.col.twelve {
   }
 }
 
+/* Navbar & Menu */
+div.nav {
+  width: 100%;
+  height: $navHeight;
+  background: $darkBlue;
+  margin-bottom: $padding/2;
+  box-sizing: border-box;
+  padding: 0 $padding;
+}
+
+div.nav-logo {
+  height: $navHeight;
+  width: $navHeight/1.8;
+  float: left;
+  background: url("../imgs/pastel.png") no-repeat;
+  background-size: 100%;
+  background-position: center;
+}
+
+@media only screen and (max-width: $md) {
+  $padding: 20px;
+  div.nav {
+    margin-bottom: $padding/2;
+    padding: 0 $padding;
+  }
+}
+@media only screen and (max-width: $sm) {
+  $padding: 15px;
+  $navHeight: 70px;
+  div.nav {
+    height: $navHeight;
+    margin-bottom: $padding/2;
+    padding: 0 $padding;
+  }
+  div.nav-logo {
+    height: $navHeight;
+    width: $navHeight/1.8;
+  }
+}
+
 /* Form */
 form.form {
   width: 100%;
@@ -289,9 +343,9 @@ input[type="text"].form,
 input[type="email"].form,
 input[type="password"] {
   border: none;
-  border-bottom: 2px solid $green;
+  border-bottom: 2px solid $color;
   background: none;
-  font-size: 1.2em;
+  font-size: $paragraphSize;
   width: 100%;
   outline: none;
   box-sizing: border-box;
@@ -307,8 +361,27 @@ input[type="password"] {
 input[type="text"].form:focus,
 input[type="email"].form:focus,
 input[type="password"]:focus {
-  background: $medBlue;
-  color: $green;
+  //background: $medBlue;
+  color: $color;
+}
+
+textarea.form {
+  border: none;
+  border: 2px solid $color;
+  background: none;
+  font-size: $paragraphSize;
+  width: 100%;
+  outline: none;
+  box-sizing: border-box;
+  color: #fff;
+  font-family: $fontsPara;
+  padding: 10px 10px;
+  font-weight: 200;
+  transition: background 0.15s ease, color 0.15s ease;
+  margin-bottom: 20px;
+  background: none;
+  resize: none;
+  height: 100px;
 }
 
 button.form {
@@ -316,7 +389,7 @@ button.form {
   font-family: $fontsPara;
   padding: 10px 20px;
   font-size: 1em;
-  background: $green;
+  background: $color;
   color: $darkBlue;
   font-weight: 500;
   cursor: pointer;
@@ -328,7 +401,7 @@ button.form:hover {
 }
 
 button.form:active {
-  background: $green;
+  background: $color;
 }
 
 ::placeholder {
@@ -347,4 +420,75 @@ p.footer {
   font-size: 1.5em;
   font-weight: 500;
   color: $medBlue;
+}
+
+/* Hamburger */
+.nav-hamburger {
+  height: $navHeight;
+  position: relative;
+  z-index: 1000000;
+  float: right;
+}
+
+.nav-hamburger-wrapper {
+  height: $navHeight * 0.5;
+  width: 34px;
+  position: relative;
+  top: 50%;
+  margin-left: auto;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.nav-hamburger-line-top {
+  height: 2px;
+  width: 100%;
+  border-radius: 6px;
+  position: absolute;
+  background: #fff;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-top: -10px;
+  transition: transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1),
+    background 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.nav-hamburger-line-mid {
+  height: 2px;
+  width: 100%;
+  border-radius: 6px;
+  position: absolute;
+  background: #fff;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: opacity 0.2s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.nav-hamburger-line-btm {
+  height: 2px;
+  width: 100%;
+  border-radius: 6px;
+  position: absolute;
+  background: #fff;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-top: 10px;
+  transition: transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1),
+    background 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.hamburger-top-active {
+  transform: rotateZ(45deg);
+  top: 29px;
+  background: $color;
+}
+
+.hamburger-mid-active {
+  opacity: 0 !important;
+}
+
+.hamburger-btm-active {
+  transform: rotateZ(-45deg);
+  top: 9px;
+  background: $color;
 }

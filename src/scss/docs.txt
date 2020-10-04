@@ -9,6 +9,8 @@ p.paragraph
 
 div.row -> .one...twelve .col -> .col-container
 
+div.nav -> div.nav-logo
+
 form.form -> input.form, button.form
 
 div.footer -> p.footer
