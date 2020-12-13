@@ -1,4 +1,4 @@
 # garlic
-Garlic CSS Framework
+Garlic Sass/CSS Framework demonstrated with React
 
-Coming soon...
+***This is a WIP and not finished***
